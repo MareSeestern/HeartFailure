@@ -28,7 +28,7 @@ Insgesamt leiden 1,8 Millionen Menschen in Deutschland an einer Herzinsuffizienz
 ## Inhalt
 
 Unser Projekt lässt sich in folgende Parts unterteilen:
-- Python Datei, um missing values zu ergänzen
+- Python Datei, um missing values zu ergänzen.
 - Python Notebook, um das Modell zu trainieren, testen und anschließend zu speichern.
 - Python Datei, um eine Eingabemaske mit Tkinter anzuzeigen und auszuwerten.
 
@@ -39,7 +39,7 @@ Unser Projekt lässt sich in folgende Parts unterteilen:
 
 # Setup
 
-Wir nutzen als Programme Anaconda und zum Ausführen die Anaconda Prompt. Öffne diese dazu über das Start-Menü und navigiere anschließen mit "cd" zu dem entpackten Repository.
+Wir nutzen als Programme Anaconda und zum Ausführen die Anaconda Prompt. Öffne diese dazu über das Start-Menü und navigiere anschließen mit "cd" zu dem Entpackten Repository.
 
 
 ---
@@ -84,7 +84,7 @@ $ pip install -r requirements.txt
 $ cd Auswertungsprogramm
 $ python Auswertung_programm.py
 ```
-Wir haben in dem Ordner /Auswertungsprogramm auch ein Tabellendokument mit Beispiel Personen hinterlegt. Gerne können Sie diese Werte zum Testen einsetzen.
+Wir haben in dem Ordner /Auswertungsprogramm auch ein Tabellendokument mit Beispiel Personen hinterlegt. Gerne können diese Werte zum Testen eingesetzt werden.
 
 ---
 ## Support
