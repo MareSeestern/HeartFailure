@@ -30,14 +30,14 @@ Unser Projekt lässt sich in folgende Parts unterteilen:
 - Python Notebook, um das Modell zu trainieren, testen und anschließend zu speichern.
 - Python Datei, um eine Eingabemaske mit Tkinter anzuzeigen und auszuwerten.
 
-
+---
 # Clone
 
 - Klone dieses Repository mit Hilfe von GitHub Desktop oder über den Browser auf Deine lokale Maschiene.
 
 # Setup
 Wir nutzen als Programme Anaconda. 
-
+---
 ## Datensatz
 Der Datensatz liegt als .csv Datei im "Train" Ordner. Source: <a href="https://archive.ics.uci.edu/ml/datasets/Heart+Disease">https://archive.ics.uci.edu/ml/datasets/Heart+Disease</a>
 
@@ -63,7 +63,7 @@ $ cd Train
 $ python heart_disease_training.py
 ```
 
---
+---
 
 ## Ausführen von dem User Interface (Datensatz benötigt)
 
@@ -81,8 +81,7 @@ $ python Auswertung_programm.py
 ```
 Wir haben in dem Ordner /Auswertungsprogramm auch ein Tabellendokument mit Beispiel Personen hinterlegt. Gerne können Sie diese Werte zum Testen einsetzen.
 
---
-
+---
 ## Support
 
 Wir sind hier zu finden:
