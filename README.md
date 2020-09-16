@@ -33,10 +33,10 @@ Unser Projekt lässt sich in folgende Parts unterteilen:
 ---
 # Clone
 
-- Klone dieses Repository mit Hilfe von GitHub Desktop oder über den Browser auf Deine lokale Maschiene.
+- Klone dieses Repository mit Hilfe von GitHub Desktop oder über den Browser auf Deine lokale Maschiene und entpacke die .zip Date.
 
 # Setup
-Wir nutzen als Programme Anaconda. 
+Wir nutzen als Programme Anaconda und zum Ausführen die Anaconda Prompt. Öffne diese dazu über das Start-Menü und navigiere anschließen mit "cd" zu dem entpackten Repository.
 ---
 ## Datensatz
 Der Datensatz liegt als .csv Datei im "Train" Ordner. Source: <a href="https://archive.ics.uci.edu/ml/datasets/Heart+Disease">https://archive.ics.uci.edu/ml/datasets/Heart+Disease</a>
