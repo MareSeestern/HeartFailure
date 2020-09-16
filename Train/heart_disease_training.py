@@ -13,45 +13,50 @@ Created on Wed Aug 28 14:14:31 2019
 
 @author: mario
 """
-
+# Nötige Bibliotheken
 import tensorflow as tf
 from tensorflow import keras
-
-from tensorboardcolab import TensorBoardColab, TensorBoardColabCallback
-
+from numpy.random import seed
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split 
+import matplotlib.pyplot as plt
 
-print("reading")
-data=np.genfromtxt("/content/sample_data/dataset_vollstandig.csv",delimiter=",")
-data = pd.DataFrame(data[1:], columns = ["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","target"])
+data=np.genfromtxt("dataset_vollstandig.csv",delimiter=",")  # Laden der .csv mit den Daten
 
-data = pd.get_dummies(data, columns = ['sex', 'cp', 'fbs', 'restecg', 'exang', 'slope', 'ca',"thal"])
-print(data.head())
-data["target"]=data["target"].replace(2, 1)
-data["target"]=data["target"].replace(3, 1)
+data = pd.DataFrame(data[1:], columns = ["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","target"]) # Daten in einen Pandas Dataframe laden
+
+data = pd.get_dummies(data, columns = ['sex', 'cp', 'fbs', 'restecg', 'exang', 'slope', 'ca',"thal"]) # Dummy Spalten erstellen um Categorical Variables aufzuspalten
+
+print(data.head()) # Erste fünf Patienten zur Übersicht printen
+
+data["target"]=data["target"].replace(2, 1) # Es wird keine Unterscheidung gebraucht,
+data["target"]=data["target"].replace(3, 1) # ob der Herzerkrankung heilbar ist oder nicht
 data["target"]=data["target"].replace(4, 1)
-data.describe()
 
 labels=[]
 x=[]
+
 pd.options.display.max_columns = 50
+
+# Sortieren von Labels und Daten
 labels=data["target"]
 x = data.drop(['target'], axis = 1)
 x=np.array(x)
 labels=np.array(labels)
+
+# Test und Train Split
 X_train, X_test, y_train, y_test = train_test_split(x, labels, test_size = 0.1, random_state = 0)
 print(X_train.shape,y_train.shape)
 
-print("GPU Available: ", tf.test.is_gpu_available())
+
 
 def visualization(history):
-    import matplotlib.pyplot as plt
+    
     # Plot training & validation accuracy values
-    plt.plot(history.history['acc'])
-    plt.plot(history.history['val_acc'])
+    plt.plot(history.history['accuracy'])
+    plt.plot(history.history['val_accuracy'])
     plt.title('Model accuracy')
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
@@ -67,11 +72,12 @@ def visualization(history):
     plt.legend(['Train', 'Test'], loc='upper left')
     plt.show()
 
-tbc=TensorBoardColab()
+seed(1)  # Seed zum Reporduzieren der Ergebnisse
 
-from numpy.random import seed
-seed(1)
-data=[]
+
+
+
+# Modell erstellen (Hyperparameter über systematische Hyperparameter Suche gefunden)
 init='glorot_uniform'
 
 model = keras.Sequential([     
@@ -86,60 +92,16 @@ model = keras.Sequential([
 optimizer=keras.optimizers.RMSprop()
 model.compile(optimizer=optimizer, loss=keras.losses.mean_squared_error, metrics=['accuracy'])
 
+history=model.fit(X_train,y_train,validation_split=0.2,batch_size=2, epochs=200) # Trainieren und speichern der Ergebnisse
+model.summary() # Übersicht des Aufbau des Modells ausgeben
 
-
-keras.callbacks.TensorBoard(log_dir='./logs', histogram_freq=1, batch_size=2, write_graph=True, write_grads=True, write_images=True, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None, embeddings_data=None, update_freq='epoch')
-  
-history=model.fit(X_train,y_train,validation_split=0.06,batch_size=2, epochs=200, callbacks=[tf.keras.callbacks.TensorBoard(log_dir='./logs', histogram_freq=1, batch_size=2, write_graph=True, write_grads=True, write_images=True, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None, embeddings_data=None, update_freq='epoch')]) 
-model.summary()
+# Test Accuracy berechnen und printen
 test_loss, test_acc = model.evaluate(X_test, y_test)   
 print('Test accuracy:', test_acc) 
 print('Test loss:', test_loss)    
-visualization(history)
+visualization(history) # Visualisierung des Trainings Graphen
 
-model.save('aktuelles_Modell_ohne_thal.pb')
+model.save('model.pb') # Modell speichern
 
-#!rm -rf logs
-import keras.backend as K
-K.clear_session()
 
-# Commented out IPython magic to ensure Python compatibility.
-# %load_ext tensorboard
-# %tensorboard --logdir logs
 
-y_predict=model.predict(X_test)# , y_test)
-y_predict_0=[]
-y_predict_1=[]
-
-y_test_1=[]
-y_test_0=[]
-y_predict_binary=[]
-
-for i in range (y_predict.size):
-  if y_predict[i]>0.2:
-    y_predict_1.append(1)
-    y_predict_binary.append(1)
-  else:
-    y_predict_0.append(0)
-    y_predict_binary.append(0)
-print(len(y_predict_1),len(y_predict_0))
-
-for i in range(y_test.size):
-  if y_test[i]==1:
-    y_test_1.append(1)
-  else:
-    y_test_0.append(0)
-print(len(y_test_1),len(y_test_0))
-fehler=0
-fehler_1=0
-fehler_0=0
-for i in range(y_predict.size):
-  #print(y_predict_binary[i],y_test[i])
-  if y_predict_binary[i]!=y_test[i]:
-    print(y_predict[i],y_test[i])
-    if y_predict_binary[i]==1:
-      fehler_1=fehler_1+1
-    else:
-      fehler_0=fehler_0+1
-    fehler=fehler+1
-print("Fehler insgesamt:",fehler," Fehlerhaft als Krank eingeordnet:",fehler_1,"   Falsch als gesund eingeordnet:", fehler_0)

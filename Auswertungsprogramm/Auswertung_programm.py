@@ -45,11 +45,11 @@ def build_model():
 
 def eingabe_2(fenster2,werte,model):
    
-   model.load_weights(r"C:\Users\mario\Desktop\GitHub\Heart_disease_prediction\Python_Dateien\data\model_weights.h5")
+   model.load_weights("model_weights.h5")
 
    data2=pd.DataFrame(werte,columns = ["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","slope","ca"])
   
-   data=np.genfromtxt(r"C:\Users\mario\Desktop\GitHub\Heart_disease_prediction\Python_Dateien\data\dataset_vollstandig.csv",delimiter=",")
+   data=np.genfromtxt("dataset_vollstandig.csv",delimiter=",")
    data = pd.DataFrame(data[1:], columns = ["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","target"])
    data = data.drop(['oldpeak'], axis = 1)
    data = data.drop(['thal'], axis = 1)
