@@ -1,4 +1,4 @@
-<a href="https://raw.githubusercontent.com/MareSeestern/VineLeafDisease/master/res/IMG_2417.JPG?token=AK7DBRW6IEW2N3ABYX6NDZ27ND43U" title="vine" alt="vine"></a>
+<a href="https://raw.githubusercontent.com/MareSeestern/HeartFailure/master/res/Logo_neu.jpg?token=AK7DBRQ3DE3ZQZSN7FB44LK7NODUA" title="logo" alt="logo"></a>
 
 ---
 
