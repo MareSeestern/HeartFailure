@@ -1,5 +1,5 @@
-<a href="https://raw.githubusercontent.com/MareSeestern/HeartFailure/master/res/Logo_neu.jpg?token=AK7DBRQ3DE3ZQZSN7FB44LK7NODUA" title="logo" alt="logo"></a>
 
+![logo](https://raw.githubusercontent.com/MareSeestern/HeartFailure/master/res/Logo_neu.jpg?token=AK7DBRQ3DE3ZQZSN7FB44LK7NODUA)
 ---
 
 # Heart Failure
