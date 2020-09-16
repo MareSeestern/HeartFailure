@@ -15,7 +15,7 @@
 - [Projektbeschreibung](#Projektschreibung)
 - [Inhalt](#Inhalt)
 - [Setup](#Setup)
-
+- [Support](#Support)
 
 ---
 
@@ -59,11 +59,27 @@ $ pip install -r requirements.txt
 > Nun kann das Training über folgenden Befehl gestartet werden:
 
 ```shell
-$ cd train
-$ python train_model.py
+$ cd Train
+$ python heart_disease_training.py
 ```
 
+--
 
+## Ausführen von dem User Interface (Datensatz benötigt)
+
+> Installieren von den nötigen Bibliotheken in "Anaconda Prompt"
+
+```shell
+$ pip install -r requirements.txt
+```
+
+> Nun kann das UI über folgenden Befehl gestartet werden:
+
+```shell
+$ cd Auswertungsprogramm
+$ python Auswertung_programm.py
+```
+Wir haben in dem Ordner /Auswertungsprogramm auch ein Tabellendokument mit Beispiel Personen hinterlegt. Gerne können Sie diese Werte zum Testen einsetzen.
 
 --
 
