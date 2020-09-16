@@ -91,7 +91,7 @@ Wir haben in dem Ordner /Auswertungsprogramm auch ein Tabellendokument mit Beisp
 
 Wir sind hier zu finden:
 
-- Website at <a href="google.com" target="_blank">`EINFÜGEN`</a>
+- Website at <a href="https://matheli.github.io/Herzinsuffizienz/" target="_blank">`Erkennung einer Herzinsuffizienz mit KI`</a>
 - Youtube at <a href="https://www.youtube.com/channel/UCsGZt4UtInZ01tBjM1B-FbQ?view_as=subscriber" target="_blank">`INFOrmAtIc Teens`</a>
 
 
