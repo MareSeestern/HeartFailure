@@ -1,5 +1,5 @@
-<a href="https://raw.githubusercontent.com/MareSeestern/VineLeafDisease/master/res/IMG_2417.JPG?token=AK7DBRW6IEW2N3ABYX6NDZ27ND43U" title="vine" alt="vine"></a>
 
+![logo](https://raw.githubusercontent.com/MareSeestern/HeartFailure/master/res/Logo_neu.jpg?token=AK7DBRQ3DE3ZQZSN7FB44LK7NODUA)
 ---
 
 # Heart Failure
@@ -30,14 +30,14 @@ Unser Projekt lässt sich in folgende Parts unterteilen:
 - Python Notebook, um das Modell zu trainieren, testen und anschließend zu speichern.
 - Python Datei, um eine Eingabemaske mit Tkinter anzuzeigen und auszuwerten.
 
-
+---
 # Clone
 
-- Klone dieses Repository mit Hilfe von GitHub Desktop oder über den Browser auf Deine lokale Maschiene.
+- Klone dieses Repository mit Hilfe von GitHub Desktop oder über den Browser auf Deine lokale Maschiene und entpacke die .zip Date.
 
 # Setup
-Wir nutzen als Programme Anaconda. 
-
+Wir nutzen als Programme Anaconda und zum Ausführen die Anaconda Prompt. Öffne diese dazu über das Start-Menü und navigiere anschließen mit "cd" zu dem entpackten Repository.
+---
 ## Datensatz
 Der Datensatz liegt als .csv Datei im "Train" Ordner. Source: <a href="https://archive.ics.uci.edu/ml/datasets/Heart+Disease">https://archive.ics.uci.edu/ml/datasets/Heart+Disease</a>
 
@@ -63,7 +63,7 @@ $ cd Train
 $ python heart_disease_training.py
 ```
 
---
+---
 
 ## Ausführen von dem User Interface (Datensatz benötigt)
 
@@ -81,8 +81,7 @@ $ python Auswertung_programm.py
 ```
 Wir haben in dem Ordner /Auswertungsprogramm auch ein Tabellendokument mit Beispiel Personen hinterlegt. Gerne können Sie diese Werte zum Testen einsetzen.
 
---
-
+---
 ## Support
 
 Wir sind hier zu finden:
