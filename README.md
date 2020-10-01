@@ -1,5 +1,5 @@
 
-![logo](https://raw.githubusercontent.com/MareSeestern/HeartFailure/master/res/Logo_neu.jpg?token=AK7DBRQ3DE3ZQZSN7FB44LK7NODUA)
+![logo](https://github.com/MareSeestern/HeartFailure/blob/master/res/Logo_neu.jpg?raw=true)
 ---
 
 # Heart Failure
@@ -39,7 +39,7 @@ Unser Projekt lässt sich in folgende Parts unterteilen:
 
 # Setup
 
-Wir nutzen als Programme Anaconda und zum Ausführen die Anaconda Prompt. Öffne diese dazu über das Start-Menü und navigiere anschließen mit "cd" zu dem Entpackten Repository.
+Wir nutzen als Programme Anaconda und zum Ausführen die Anaconda Prompt. Öffne diese dazu über das Start-Menü und navigiere anschließend mit "cd" zu dem Entpackten Repository.
 
 
 ---
