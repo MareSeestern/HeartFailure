@@ -57,7 +57,8 @@ Creators:
 
 ## Schneller Überblick über Trainingsergebnisse und Code
 
-Wenn Sie nur einen schnellen Überblick über unseren Code der das Modell erstellt haben möchten, haben wir ein Notebook in das Root-Verzeichnis dieses Repositories gelegt ( /DemonstrationHerzinsuffizienz.ipynb ). Hier finden Sie unseren Code und alle wichtigen Grafiken. Den vollständigen ausführbaren Code von dem Trainingsprozess, das UI und das PreProcessing finden Sie unter folgenden Punkten erklärt.
+Wenn Sie nur einen schnellen Überblick über unseren Code der das Modell erstellt haben möchten, haben wir ein Notebook in das Root-Verzeichnis dieses Repositories gelegt ( /DemonstrationHerzinsuffizienz.ipynb ). Hier finden Sie unseren Code und alle wichtigen Grafiken. Den vollständigen ausführbaren Code von dem Trainingsprozess, das UI und das PreProcessing finden Sie in unserem <a href="https://github.com/MareSeestern/HeartFailure">GitHub</a>
+ und in den folgenden Punkten erklärt.
 
 
 ## Trainieren von dem Modell (Datensatz benötigt)
